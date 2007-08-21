@@ -25,7 +25,8 @@ slegendre.polynomials(n, normalized=FALSE)
 \author{ Frederick Novomestky \email{fnovomes@poly.edu} }
 \seealso{
 \code{\link{slegendre.recurrences}},
-\code{\link{orthogonal.polynomials}}
+\code{\link{orthogonal.polynomials}},
+\code{\link{orthonormal.polynomials}}
 }
 \examples{
 normalized.p.list <- slegendre.polynomials( 10, normalized=TRUE )

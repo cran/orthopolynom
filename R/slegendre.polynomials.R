@@ -10,6 +10,12 @@ slegendre.polynomials <- function( n, normalized=FALSE )
 ### normalized = boolean value.  if true, the polynomials are normalized
 ###
     recurrences <- slegendre.recurrences( n, normalized )
-    polynomials <- orthogonal.polynomials( recurrences )
+    if ( normalized ) {
+        h.0 <- 1
+        p.0 <- polynomial( c( 1 / sqrt( h.0 ) ) )
+        polynomials <- orthonormal.polynomials( recurrences, p.0 )
+    }
+    else
+        polynomials <- orthogonal.polynomials( recurrences )
     return( polynomials )
 }

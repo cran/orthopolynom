@@ -25,7 +25,8 @@ hermite.he.polynomials(n, normalized=FALSE)
 \author{ Frederick Novomestky \email{fnovomes@poly.edu} }
 \seealso{
 \code{\link{hermite.he.recurrences}},
-\code{\link{orthogonal.polynomials}}
+\code{\link{orthogonal.polynomials}},
+\code{\link{orthonormal.polynomials}}
 }
 \examples{
 normalized.p.list <- hermite.he.polynomials( 10, normalized=TRUE )

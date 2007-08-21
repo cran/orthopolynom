@@ -25,7 +25,8 @@ laguerre.polynomials(n, normalized=FALSE)
 \author{ Frederick Novomestky \email{fnovomes@poly.edu} }
 \seealso{
 \code{\link{laguerre.recurrences}},
-\code{\link{orthogonal.polynomials}}
+\code{\link{orthogonal.polynomials}},
+\code{\link{orthonormal.polynomials}}
 }
 \examples{
 normalized.p.list <- laguerre.polynomials( 10, normalized=TRUE )

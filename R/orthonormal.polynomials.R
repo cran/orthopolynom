@@ -1,16 +1,14 @@
-chebyshev.c.polynomials <- function( n, normalized=FALSE )
+orthonormal.polynomials <- function( recurrences, p.0 )
 {
 ###
 ### This function returns a list with n+1 elements
-### containing the order k Chebyshev polynomials of the first kind, Ck(x),
-### for orders k=0,1,...n
+### containing the order orthonormal polynomials for orders k=0,1,...,n
 ###
-### Parameters
-### n = integer highest polynomial order
-### normalized = boolean value.  if true, the polynomials are normalized
+### Parameter
+### recurrences = a data frame containing the parameters c, d, e and f
+### p.0 = a polynomial object for the order 0 orthonormal polynomial
 ###
     require( polynom )
-    recurrences <- chebyshev.c.recurrences( n, normalized )
     np1 <- nrow( recurrences )
     n <- np1 - 1
     c <- recurrences$c
@@ -18,7 +16,6 @@ chebyshev.c.polynomials <- function( n, normalized=FALSE )
     e <- recurrences$e
     f <- recurrences$f
     polynomials <- as.list( rep( NULL, np1 ) )
-    p.0 <- polynomial( c( 2 ) )
     polynomials[[1]] <- p.0
     j <- 0
     while ( j < n ) {
@@ -37,12 +34,6 @@ chebyshev.c.polynomials <- function( n, normalized=FALSE )
         }
         polynomials[[j+2]] <- p.jp1
         j <- j + 1
-    }
-    if ( normalized ) {
-        norms <- sqrt( chebyshev.c.inner.products( n ) )
-        for ( k in 1:np1 ) {
-            polynomials[[k]] <- polynomials[[k]] / norms[k]
-        }
     }
     return( polynomials )
 }

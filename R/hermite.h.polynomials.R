@@ -11,7 +11,13 @@ hermite.h.polynomials <- function( n, normalized=FALSE )
 ###
    require( polynom )
    recurrences <- hermite.h.recurrences( n, normalized )
-   polynomials <- orthogonal.polynomials( recurrences )
+   if ( normalized ) {
+       h.0 <- sqrt( pi )
+       p.0 <- polynomial( c( 1 / sqrt( h.0 ) ) )
+       polynomials <- orthonormal.polynomials( recurrences, p.0 )
+   }
+   else
+       polynomials <- orthogonal.polynomials( recurrences )
    return( polynomials )
    return( NULL )
 }

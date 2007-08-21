@@ -12,6 +12,9 @@ jacobi.p.recurrences <- function( n, a, b, normalized=FALSE )
 ### b = second polynomial parameter
 ### normalized = boolean value.  If true, recurrences are for normalized polynomials
 ###
+    almost.legendre <- ( abs( a ) < 1e-6 ) & ( abs( b ) < 1e-6 )
+    if ( almost.legendre )
+        return( legendre.recurrences( n, normalized ) )
     if ( n < 0 )
         stop( "negative highest polynomial order" )
     if ( n != round( n ) )

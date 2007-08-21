@@ -27,7 +27,8 @@ jacobi.p.polynomials(n, a, b, normalized=FALSE)
 \author{ Frederick Novomestky \email{fnovomes@poly.edu} }
 \seealso{
 \code{\link{jacobi.p.recurrences}},
-\code{\link{orthogonal.polynomials}}
+\code{\link{orthogonal.polynomials}},
+\code{\link{orthonormal.polynomials}}
 }
 \examples{
 normalized.p.list <- jacobi.p.polynomials( 10, 2, 2, normalized=TRUE )

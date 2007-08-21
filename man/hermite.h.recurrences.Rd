@@ -2,7 +2,9 @@
 \alias{hermite.h.recurrences}
 \title{ Recurrence relations for Hermite polynomials }
 \description{
-  This function returns a data frame with $n$+1 rows and four named columns containing the coefficient vectors \bold{c}, \bold{d}, \bold{e} and \bold{f} of the recurrence relations for the order $k$ Hermite polynomial, \eqn{H_k \left( x \right)}, and for orders $k$ = 0, 1, ... , $n$.
+  This function returns a data frame with $n$+1 rows and four named columns containing the coefficient vectors
+   \bold{c}, \bold{d}, \bold{e} and \bold{f} of the recurrence relations for the order $k$ Hermite polynomial,
+    \eqn{H_k \left( x \right)}, and for orders $k$ = 0, 1, ... , $n$.
 }
 \usage{
 hermite.h.recurrences(n, normalized=FALSE)

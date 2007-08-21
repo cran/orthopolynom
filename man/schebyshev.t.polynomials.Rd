@@ -25,7 +25,8 @@ schebyshev.t.polynomials(n, normalized)
 \author{ Frederick Novomestky \email{fnovomes@poly.edu} }
 \seealso{
 \code{\link{schebyshev.u.recurrences}},
-\code{\link{orthogonal.polynomials}}
+\code{\link{orthogonal.polynomials}},
+\code{\link{orthonormal.polynomials}}
 }
 \examples{
 normalized.p.list <- schebyshev.t.polynomials( 10, normalized=TRUE )

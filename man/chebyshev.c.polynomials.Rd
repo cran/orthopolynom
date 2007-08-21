@@ -25,7 +25,8 @@ chebyshev.c.polynomials(n, normalized=FALSE)
 \author{ Frederick Novomestky \email{fnovomes@poly.edu} }
 \seealso{
 \code{\link{chebyshev.c.recurrences}},
-\code{\link{orthogonal.polynomials}}
+\code{\link{orthogonal.polynomials}},
+\code{\link{orthonormal.polynomials}}
 }
 \examples{
 normalized.p.list <- chebyshev.c.polynomials( 10, normalized=TRUE )

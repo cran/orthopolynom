@@ -24,15 +24,13 @@ chebyshev.c.recurrences <- function( n, normalized=FALSE )
         while ( j <= n ) {
             r[k,"c"] <- (1) * norms[k+1]
             r[k,"d"] <-  0
-            r[k,"e"] <- (1) * norms[k]
             if ( j == 0 ) {
+                r[k,"e"] <- (0.5) * norms[k]
                 r[k,"f"] <- 0
             }
             else {
-                if ( j == 1 )
-                    r[k,"f"] <- 2 * norms[k-1]
-                else
-                    r[k,"f"] <-     norms[k-1]
+                r[k,"e"] <- (1) * norms[k]
+                r[k,"f"] <- (1) * norms[k-1]
             }
             j <- j + 1
             k <- k + 1
@@ -44,7 +42,7 @@ chebyshev.c.recurrences <- function( n, normalized=FALSE )
         r$d <- rep( 0, np1 )
         r$e <- rep( 1, np1 )
         r$f <- rep( 1, np1 )
-        r[2,"f"] <- 2
+        r[1,"e"] <- 0.5
         return( r )
     }
     return( NULL )

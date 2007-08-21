@@ -1,22 +1,24 @@
-legendre.polynomials <- function( n, normalized=FALSE )
+ghermite.h.polynomials <- function( n, mu, normalized=FALSE )
 {
 ###
 ###   This function returns a list with n+1 elements
-###   containing the order k Legendre polynomials Pk(x),
+###   containing the order k generalized Hermite polynomials, Hk(mu,x),
 ###   for orders k=0,1,...,n
 ###
 ###   Parameters
 ###   n = integer highest polynomial order
-###   normalized = boolean value.  if true, the polynomials are normalized
+###   mu = the polynomial parameter
+###   normalized = a boolean value.  if true, the polynomials are normalized
 ###
    require( polynom )
-   recurrences <- legendre.recurrences( n, normalized )
+   recurrences <- ghermite.h.recurrences( n, mu, normalized )
    if ( normalized ) {
-       h.0 <- 2
+       h.0 <- gamma( mu + 0.5 )
        p.0 <- polynomial( c( 1 / sqrt( h.0 ) ) )
        polynomials <- orthonormal.polynomials( recurrences, p.0 )
    }
    else
        polynomials <- orthogonal.polynomials( recurrences )
    return( polynomials )
+   return( NULL )
 }

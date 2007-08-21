@@ -19,13 +19,14 @@ legendre.polynomials(n, normalized=FALSE)
   \item{1 }{order 0 Legendre polynomial}
   \item{2 }{order 1 Legendre polynomial}
   ...
-  \item{n+1 }{order $n$ Chebyshev polynomial}
+  \item{n+1 }{order $n$ Legendre polynomial}
 }
 \references{ Abramowitz and Stegun (1968) }
 \author{ Frederick Novomestky \email{fnovomes@poly.edu} }
 \seealso{
 \code{\link{legendre.recurrences}},
-\code{\link{orthogonal.polynomials}}
+\code{\link{orthogonal.polynomials}},
+\code{\link{orthonormal.polynomials}}
 }
 \examples{
 normalized.p.list <- legendre.polynomials( 10, normalized=TRUE )

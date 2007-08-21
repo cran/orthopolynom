@@ -15,29 +15,31 @@ gegenbauer.inner.products <- function( n, alpha )
         stop( "highest polynomial order is not an integer" )
     if ( alpha <= -0.5 )
         stop( "alpha is less than or equal to -0.5" )
-    if ( alpha == 0 )
+    if ( abs( alpha ) < 1e-6 )
         return( chebyshev.t.inner.products( n ) )
-    if ( alpha == 1 )
+    if ( abs( alpha - 0.5 ) < 1e-6 )
+        return( legendre.inner.products( n ) )
+    if ( abs( alpha - 1.0 ) < 1e-6 )
         return( chebyshev.u.inner.products( n ) )
     inner.products <- rep( 1, n + 1 )
     j <- 1
     coef <- pi * ( 2 ^ ( 1 - 2 * alpha ) )
     for ( k in 0:n ) {
-    	if ( alpha == 0 ) {
-    		if ( k == 0 )
-    			inner.products[j] <- pi
-    		else
-    			inner.products[j] <- ( 2 * pi ) / ( k ^ 2 )
-    	}
-    	else {
-        	log.num <- lgamma( k + 2 * alpha )
-        	log.den <- lgamma( k + 1 ) + 2 * lgamma( alpha )
-        	if ( k == -alpha ) {
-            		inner.products[j] <- coef * exp( log.num - log.den )
-        	}
-        	else {
-        	    inner.products[j] <- coef * exp( log.num - log.den ) / ( k + alpha )
-        	}
+        if ( abs( alpha ) < 1e-6 ) {
+            if ( k == 0 )
+                inner.products[j] <- pi
+            else
+                inner.products[j] <- ( 2 * pi ) / ( k ^ 2 )
+        }
+        else {
+            log.num <- lgamma( k + 2 * alpha )
+            log.den <- lfactorial( k ) + 2 * lgamma( alpha )
+            if ( k == -alpha ) {
+                    inner.products[j] <- coef * exp( log.num - log.den )
+            }
+            else {
+                inner.products[j] <- coef * exp( log.num - log.den ) / ( k + alpha )
+            }
         }
         j <- j + 1
     }

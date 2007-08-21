@@ -10,6 +10,9 @@ jacobi.g.inner.products <- function( n, p, q )
 ###   p = first parameter
 ###   q = second parameter
 ###
+    almost.slegendre <- ( abs( p - q ) ) < 1e-6 & ( abs ( q - 1 ) < 1e-6 )
+    if ( almost.slegendre )
+        return( slegendre.inner.products( n ) )
    if ( n < 0 )
       stop( "negative highest polynomial order" )
    if ( n != round( n ) )
@@ -24,7 +27,11 @@ jacobi.g.inner.products <- function( n, p, q )
    for ( k in 0:n ) {
       log.num <- lfactorial( k ) + lgamma( k + q ) + lgamma( k + p ) + lgamma( k + pq + 1 )
       log.den <- 2 * lgamma( 2 * k + p )
-      inner.products[j] <- exp( log.num - log.den ) / ( 2 * k + p )
+      scale <- 2 * k + p
+      if ( scale == 0 )
+          inner.products[j] <- Inf
+      else
+          inner.products[j] <- exp( log.num - log.den ) / scale
       j <- j + 1
    }
    return( inner.products )

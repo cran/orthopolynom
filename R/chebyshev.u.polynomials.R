@@ -1,16 +1,22 @@
 chebyshev.u.polynomials <- function( n, normalized=FALSE )
 {
 ###
-###	This function returns a list with n+1 elements
-###	containing the order k Chebyshev polynomials of the second kind, Uk(x),
-###	for orders k=0,1,...n
+### This function returns a list with n+1 elements
+### containing the order k Chebyshev polynomials of the second kind, Uk(x),
+### for orders k=0,1,...n
 ###
-###	Parameters
-###	n = integer highest polynomial order
-###	normalized = boolean value.  if true, the polynomials are normalized
+### Parameters
+### n = integer highest polynomial order
+### normalized = boolean value.  if true, the polynomials are normalized
 ###
-	require( polynom )
-	recurrences <- chebyshev.u.recurrences( n, normalized )
-	polynomials <- orthogonal.polynomials( recurrences )
-	return( polynomials )
+    require( polynom )
+    recurrences <- chebyshev.u.recurrences( n, normalized )
+    if ( normalized ) {
+        h.0 <- pi / 2
+        p.0 <- polynomial( c( 1 / sqrt( h.0 ) ) )
+        polynomials <- orthonormal.polynomials( recurrences, p.0 )
+    }
+    else
+        polynomials <- orthogonal.polynomials( recurrences )
+    return( polynomials )
 }

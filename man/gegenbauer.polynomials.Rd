@@ -26,7 +26,8 @@ gegenbauer.polynomials(n, alpha, normalized=FALSE)
 \author{ Frederick Novomestky \email{fnovomes@poly.edu} }
 \seealso{
 \code{\link{gegenbauer.recurrences}},
-\code{\link{orthogonal.polynomials}}
+\code{\link{orthogonal.polynomials}},
+\code{\link{orthonormal.polynomials}}
 }
 \examples{
 normalized.p.list <- gegenbauer.polynomials( 10, 1, normalized=TRUE )

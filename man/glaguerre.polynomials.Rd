@@ -26,7 +26,8 @@ glaguerre.polynomials(n, alpha, normalized=FALSE)
 \author{ Frederick Novomestky \email{fnovomes@poly.edu} }
 \seealso{
 \code{\link{glaguerre.recurrences}},
-\code{\link{orthogonal.polynomials}}
+\code{\link{orthogonal.polynomials}},
+\code{\link{orthonormal.polynomials}}
 }
 \examples{
 normalized.p.list <- glaguerre.polynomials( 10, 1, normalized=TRUE )

@@ -2,7 +2,8 @@
 \alias{hermite.h.polynomials}
 \title{ Create list of Hermite polynomials }
 \description{
-  This function returns a list with $n$+1 elements containing the order $k$ Hermite polynomials, \eqn{H_k \left( x \right)}, for orders $k$ = 0, 1, ..., $n$.
+  This function returns a list with $n$+1 elements containing the order $k$ Hermite polynomials, 
+  \eqn{H_k \left( x \right)}, for orders $k$ = 0, 1, ..., $n$.
 }
 \usage{
 hermite.h.polynomials(n, normalized=FALSE)
@@ -25,7 +26,8 @@ hermite.h.polynomials(n, normalized=FALSE)
 \author{ Frederick Novomestky \email{fnovomes@poly.edu} }
 \seealso{
 \code{\link{hermite.h.recurrences}},
-\code{\link{orthogonal.polynomials}}
+\code{\link{orthogonal.polynomials}},
+\code{\link{orthonormal.polynomials}}
 }
 \examples{
 normalized.p.list <- hermite.h.polynomials( 10, normalized=TRUE )

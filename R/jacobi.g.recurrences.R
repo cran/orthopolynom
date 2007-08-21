@@ -2,7 +2,7 @@ jacobi.g.recurrences <- function( n, p, q, normalized=FALSE )
 {
 ###
 ### This function returns a data frame with n+1 rows and four columns
-### containing the coeffieicnts c, d, e and f of the recurrence relations
+### containing the coefficients c, d, e and f of the recurrence relations
 ### for the order k Jacobi polynomial, Gk(p,q,x),
 ### and for orders k=0,1,...,n
 ###
@@ -12,6 +12,9 @@ jacobi.g.recurrences <- function( n, p, q, normalized=FALSE )
 ### q = second polynomial parameter
 ### normalized = boolean value.  If true, recurrences are for normalized polynomials
 ###
+    almost.slegendre <- ( abs( p - q ) ) < 1e-6 & ( abs ( q - 1 ) < 1e-6 )
+    if ( almost.slegendre )
+        return( slegendre.recurrences( n, normalized ) )
     if ( n < 0 )
         stop( "negative highest polynomial order" )
     if ( n != round( n ) )
