@@ -13,7 +13,7 @@ orthonormal.polynomials(recurrences, p.0)
 }
 \arguments{
   \item{recurrences}{ a data frame containing the parameters of the orthonormal polynomial recurrence relations }
-  \item{p.0} { a polynomial object for the order 0 orthonormal polynomial }
+  \item{p.0}{ a polynomial object for the order 0 orthonormal polynomial }
 }
 \details{
   The argument is a data frame with $n$+1 rows and four named columns.  The column names are \code{c}, \code{d}, \code{e} and \code{f}.  These columns correspond to the column vectors described above.
