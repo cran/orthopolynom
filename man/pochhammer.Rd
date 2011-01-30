@@ -13,8 +13,8 @@
 pochhammer(z, n)
 }
 \arguments{
-  \item{z}{ argument of the symbol }
-  \item{n}{ integer number of terms in the symbol }
+  \item{z}{ numeric value for the argument of the symbol }
+  \item{n}{ integer value for the number of terms in the symbol }
 }
 \value{
   The value of Pochhammer's symbol
@@ -22,6 +22,10 @@ pochhammer(z, n)
 \author{ Frederick Novomestky \email{fnovomes@poly.edu) }
 }
 \examples{
+###
+### compute the Pochhamer's symbol fo z equal to 1 and
+### n equal to 5
+###
 pochhammer( 1, 5 )
 }
 \keyword{ math }

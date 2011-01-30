@@ -20,7 +20,7 @@ export( "jacobi.matrices",
   "lpochhammer", "pochhammer",
   "monic.polynomial.recurrences", "monic.polynomials",
   "orthogonal.polynomials", "orthonormal.polynomials",
-  "polynomial.coefficients", 
+  "polynomial.coefficients", "polynomial.functions",
   "polynomial.derivatives", "polynomial.integrals", "polynomial.orders", "polynomial.powers",
   "polynomial.roots", "polynomial.values",
   "scaleX" )
