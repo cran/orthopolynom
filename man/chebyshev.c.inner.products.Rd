@@ -13,7 +13,7 @@ chebyshev.c.inner.products(n)
   \item{n}{ integer value for the highest polynomial order }
 }
 \details{
-  THe formula used to compute the inner products is as follows.
+  The formula used to compute the inner products is as follows.
   
   \eqn{h_n  = \left\langle {C_n |C_n } \right\rangle  = \left\{ {\begin{array}{*{20}c}
    {4\,\pi } & {n \ne 0}  \\

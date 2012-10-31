@@ -9,7 +9,6 @@ hermite.h.polynomials <- function( n, normalized=FALSE )
 ###   n = integer highest polynomial order
 ###   normalized = a boolean value.  if true, the polynomials are normalized
 ###
-   require( polynom )
    recurrences <- hermite.h.recurrences( n, normalized )
    if ( normalized ) {
        h.0 <- sqrt( pi )

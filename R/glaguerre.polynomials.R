@@ -10,7 +10,6 @@ glaguerre.polynomials <- function( n, alpha, normalized=FALSE )
 ### alpha = polynomial parameter
 ### normalized = boolean value.  if true, the polynomials are normalized
 ###
-    require( polynom )
     recurrences <- glaguerre.recurrences( n, alpha, normalized )
     if ( normalized ) {
         h.0 <- gamma( alpha + 1 )

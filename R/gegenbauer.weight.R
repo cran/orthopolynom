@@ -10,10 +10,10 @@ gegenbauer.weight <- function( x, alpha )
 ###
     n <- length( x )
     y <- rep( 0, n )
+    pow <- alpha - 0.5
     for ( i in 1:n ) {
         if ( ( x[i] > -1 ) && ( x[i] < 1 ) ) {
-            log.y <- ( alpha - 0.5 ) * log( 1 - x[i] * x[i] )
-            y[i] <- exp( log.y )
+            y[i] <- ( 1 - x[i] * x[i] ) ^ pow
         }
     }
     return( y )

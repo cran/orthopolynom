@@ -17,7 +17,7 @@ orthogonal.polynomials(recurrences)
   \item{recurrences}{ a data frame containing the parameters of the orthogonal polynomial recurrence relations }
 }
 \details{
-  The argument is a data frame with $n$+1 rows and four named columns.  
+  The argument is a data frame with \eqn{n + 1} rows and four named columns.  
   The column names are \code{c}, \code{d}, \code{e} and \code{f}.  
   These columns correspond to the column vectors described above.
 }

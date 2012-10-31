@@ -7,12 +7,12 @@
   with itself (i.e. the norm squared) for orders \eqn{k = 0,\;1,\; \ldots ,\;n }.
 }
 \usage{
-jacobi.p.inner.products(n,a,b)
+jacobi.p.inner.products(n,alpha,beta)
 }
 \arguments{
   \item{n}{ integer value for the highest polynomial order }
-  \item{a}{ numeric value for the first polynomial parameter }
-  \item{b}{ numeric value for the first polynomial parameter }
+  \item{alpha}{ numeric value for the first polynomial parameter }
+  \item{beta}{ numeric value for the first polynomial parameter }
 }
 \details{
   The formula used to compute the innser products is as follows.

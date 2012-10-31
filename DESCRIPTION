@@ -1,6 +1,6 @@
 Package: orthopolynom
-Version: 1.0-3
-Date: 2011-01-30
+Version: 1.0-4
+Date: 2012-10-31
 Title: Collection of functions for orthogonal and orthonormal
         polynomials
 Author: Frederick Novomestky <fnovomes@poly.edu>
@@ -11,6 +11,6 @@ Description: A collection of functions to construct sets of orthogonal
         functions are provided to calculate the derivative, integral,
         value and roots of lists of polynomial objects.
 License: GPL (>= 2)
-Packaged: 2011-01-31 13:58:21 UTC; fred
+Packaged: 2013-01-29 19:53:46 UTC; fred
 Repository: CRAN
-Date/Publication: 2011-01-31 15:06:37
+Date/Publication: 2013-01-29 21:07:20

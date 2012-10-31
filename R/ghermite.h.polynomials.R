@@ -10,15 +10,16 @@ ghermite.h.polynomials <- function( n, mu, normalized=FALSE )
 ###   mu = the polynomial parameter
 ###   normalized = a boolean value.  if true, the polynomials are normalized
 ###
-   require( polynom )
    recurrences <- ghermite.h.recurrences( n, mu, normalized )
    if ( normalized ) {
        h.0 <- gamma( mu + 0.5 )
        p.0 <- polynomial( c( 1 / sqrt( h.0 ) ) )
        polynomials <- orthonormal.polynomials( recurrences, p.0 )
+       return( polynomials )
    }
-   else
+   else {
        polynomials <- orthogonal.polynomials( recurrences )
-   return( polynomials )
+       return( polynomials )
+   }    
    return( NULL )
 }

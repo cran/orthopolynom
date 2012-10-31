@@ -1,4 +1,4 @@
-jacobi.p.polynomials <- function( n, a, b, normalized=FALSE )
+jacobi.p.polynomials <- function( n, alpha, beta, normalized=FALSE )
 {
 ###
 ### This function returns a list with n+1 elements
@@ -7,20 +7,24 @@ jacobi.p.polynomials <- function( n, a, b, normalized=FALSE )
 ###
 ### Parameters
 ### n = integer highest polynomial order
-### a = first polynomial parameter
-### b = second polynomial parameter
+### alpha = first polynomial parameter
+### beta = second polynomial parameter
 ### normalized = boolean value.  if true, the polynomials are normalized
 ###
-    require( polynom )
-    almost.legendre <- ( abs( a ) < 1e-6 ) & ( abs( b ) < 1e-6 )
-    if ( almost.legendre )
+    
+    if ( ( abs( alpha ) < 1e-6 ) & ( abs( beta ) < 1e-6 ) )
         return( legendre.polynomials( n, normalized ) )
-    recurrences <- jacobi.p.recurrences( n, a, b, normalized )
+    if ( abs( alpha - beta ) < 1e-6 ) {
+        alpha.prime <- alpha + 0.5
+        return( gegenbauer.polynomials( n, alpha.prime, normalized ) )
+    }    
+    recurrences <- jacobi.p.recurrences( n, alpha, beta, normalized )
     if ( normalized ) {
-        ap1 <- a + 1
-        bp1 <- b + 1
-        abp1 <- a + b + 1
-        h.0 <- ( ( 2^abp1 ) / abp1 ) * exp( lgamma(ap1 ) + lgamma(bp1) - lgamma(abp1) )
+        ap1 <- alpha + 1
+        bp1 <- beta + 1
+        abp1 <- alpha + beta + 1
+        abp2 <- alpha + beta + 2
+        h.0 <- ( 2 ^ abp1 ) * gamma( ap1 ) * gamma( bp1 ) / gamma( abp2 )
         p.0 <- polynomial( c( 1 / sqrt( h.0 ) ) )
         polynomials <- orthonormal.polynomials( recurrences, p.0 )
     }

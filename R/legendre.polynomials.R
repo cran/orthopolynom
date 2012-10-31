@@ -9,7 +9,6 @@ legendre.polynomials <- function( n, normalized=FALSE )
 ###   n = integer highest polynomial order
 ###   normalized = boolean value.  if true, the polynomials are normalized
 ###
-   require( polynom )
    recurrences <- legendre.recurrences( n, normalized )
    if ( normalized ) {
        h.0 <- 2

@@ -8,7 +8,6 @@ laguerre.polynomials <- function( n , normalized=FALSE )
 ### Parameters
 ### n = integer highest polynomial order
 ###
-    require( polynom )
     polynomials <- glaguerre.polynomials( n, 0, normalized )
     return( polynomials )
 }

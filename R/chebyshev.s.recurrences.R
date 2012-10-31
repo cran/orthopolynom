@@ -20,18 +20,14 @@ chebyshev.s.recurrences <- function( n, normalized=FALSE )
     j <- 0
     k <- 1
     if ( normalized ) {
-        norms <- sqrt( chebyshev.s.inner.products( np1 ) )
         while ( j <= n ) {
-            r[k,"c"] <- (1) * norms[k+1]
-            r[k,"d"] <-  0
-            r[k,"e"] <- (1) * norms[k]
+            r[k,"c"] <- 1
+            r[k,"d"] <- 0
+            r[k,"e"] <- 1
             if ( j == 0 )
                 r[k,"f"] <- 0
             else {
-                if ( k == 1 )
-                    r[k,"f"] <- 0
-                else
-                    r[k,"f"] <- (1) * norms[k-1]
+                r[k,"f"] <- 1
             }
             j <- j + 1
             k <- k + 1

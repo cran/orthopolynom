@@ -9,40 +9,13 @@ chebyshev.c.polynomials <- function( n, normalized=FALSE )
 ### n = integer highest polynomial order
 ### normalized = boolean value.  if true, the polynomials are normalized
 ###
-    require( polynom )
     recurrences <- chebyshev.c.recurrences( n, normalized )
-    np1 <- nrow( recurrences )
-    n <- np1 - 1
-    c <- recurrences$c
-    d <- recurrences$d
-    e <- recurrences$e
-    f <- recurrences$f
-    polynomials <- as.list( rep( NULL, np1 ) )
-    p.0 <- polynomial( c( 2 ) )
-    polynomials[[1]] <- p.0
-    j <- 0
-    while ( j < n ) {
-        cj <- c[j+1]
-        dj <- d[j+1]
-        ej <- e[j+1]
-        fj <- f[j+1]
-        monomial <- polynomial( c( dj, ej ) )
-        if ( j == 0 ) {
-            p.jp1 <- ( monomial * p.0 ) / cj
-        }
-        else {
-            p.jm1 <- polynomials[[j]]
-            p.j   <- polynomials[[j+1]]
-            p.jp1 <- ( monomial * p.j - fj * p.jm1 ) / cj
-        }
-        polynomials[[j+2]] <- p.jp1
-        j <- j + 1
-    }
     if ( normalized ) {
-        norms <- sqrt( chebyshev.c.inner.products( n ) )
-        for ( k in 1:np1 ) {
-            polynomials[[k]] <- polynomials[[k]] / norms[k]
-        }
+        h.0 <- 8 * pi
+        p.0 <- polynomial( c( 1 / sqrt( h.0 ) ) )
+        polynomials <- orthonormal.polynomials( recurrences, p.0 )
     }
+    else
+        polynomials <- orthogonal.polynomials( recurrences )
     return( polynomials )
 }

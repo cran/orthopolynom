@@ -9,7 +9,6 @@ schebyshev.u.polynomials <- function( n, normalized=FALSE )
 ### n = integer highest polynomial order
 ### normalized = boolean value.  if true, the polynomials are normalized
 ###
-    require( polynom )
     recurrences <- schebyshev.u.recurrences( n, normalized )
     if ( normalized ) {
         h.0 <- pi / 8

@@ -17,10 +17,17 @@ gegenbauer.recurrences <- function( n, alpha, normalized=FALSE )
         stop( "highest polynomial order is not integer" )
     if ( alpha <= -0.5 )
         stop( "alpha less than or equal to -0.5" )
-    if ( abs( alpha ) < 1e-6 )
-        return( chebyshev.t.recurrences( n, normalized ) )
+###
+### alpha = 1.0
+### special case is the Chebyshev polynomial of 
+###the second kind U_k(x)
+###
     if ( abs( alpha - 1 ) < 1e-6 )
         return( chebyshev.u.recurrences( n, normalized ) )
+###
+### alpha = 0.5
+### special case is the Legendre polynomial P_k(x)
+###
     if ( abs( alpha - 0.5 ) < 1e-6 )
         return( legendre.recurrences( n, normalized ) )
     np1 <- n + 1
@@ -28,26 +35,104 @@ gegenbauer.recurrences <- function( n, alpha, normalized=FALSE )
     names( r ) <- c( "c", "d", "e", "f" )
     j <- 0
     k <- 1
-    if ( normalized ) {
-        norms <- sqrt( gegenbauer.inner.products( np1, alpha ) )
-        while ( j <= n ) {
-            r[k,"c"] <- ( j + 1 ) * norms[k+1]
-            r[k,"d"] <- 0
-            r[k,"e"] <- 2 * ( j + alpha ) * norms[k]
-            if ( j == 0 )
-                r[k,"f"] <- 0
-            else {
-                if ( k == 1 )
+###
+### alpha = 0,0
+### special case is related to the Chebyshev polynomial of 
+### the first kind T_k(x)
+###
+    if ( abs( alpha ) < 1e-6 ) {
+    
+        if ( normalized ) {
+        
+            while( j <= n ) {
+                r[k,"c"] <- j + 1
+                r[k,"d"] <- 0
+                if ( j == 0 ) {
+                    r[k,"e"] <- sqrt( 2 )
+                }
+                else {
+                    r[k,"e"] <- 2 * ( j + 1 )
+                }
+                if ( j == 0 ) {
                     r[k,"f"] <- 0
-                else
-                    r[k,"f"] <- ( j + 2 * alpha - 1 ) * norms[k-1]
+                }
+                else {
+                    if ( j == 1 ) {
+                        r[k,"f"] <- 2 * sqrt( 2 )
+                    }
+                    else {
+                        r[k,"f"] <- j + 1
+                    }
+                }    
+                j <- j + 1
+                k <- k + 1
+                
+            } # end while block    
+        
+        } # end if normalized block
+        
+        else {
+        
+            while ( j <= n ) {
+                r[k,"c"] <- j + 1
+                r[k,"d"] <- 0
+                if ( j == 0 ) {
+                    r[k,"e"] <- 2
+                }
+                else {
+                    r[k,"e"] <- 2 * j
+                }
+                if ( j == 0 ) {
+                    r[k,"f"] <- 0
+                }
+                else {
+                    if ( j == 1 ) {
+                        r[k,"f"] <- 2
+                    }
+                    else {
+                        r[k,"f"] <- j - 1
+                    }    
+                }
+                j <- j + 1
+                k <- k + 1
+                
+            } # end while
+            
+        } # end else not normalized block
+        
+        return( r )
+        
+    } # end if block 
+###
+### general case
+###
+    two.alpha <- 2 * alpha
+    
+    if ( normalized ) {
+    
+        while ( j <= n ) {
+            r[k,"c"] <- ( j + 1 )
+            r[k,"d"] <- 0
+            rho.j <- sqrt( ( alpha + j + 1 ) * ( j + 1 ) * gamma( two.alpha + j ) /
+                             ( ( alpha + j ) * gamma( two.alpha + j + 1 ) ) )
+            r[k,"e"] <- 2 * ( alpha + j ) * rho.j
+            if ( j == 0 ) {
+                rho.jm1 <- 0
+            }    
+            else {
+                rho.jm1 <- sqrt( j * ( j + 1 ) * ( alpha + j + 1 ) * gamma( two.alpha + j - 1 ) /
+                                   ( ( alpha + j - 1 ) * gamma( two.alpha + j + 1 ) ) )
             }
+            r[k,"f"] <- ( j + 2 * alpha - 1 ) * rho.jm1
             j <- j + 1
             k <- k + 1
-        }
-        return( r )
-    }
+            
+        } # end while block
+        
+    } # end if block
+    
     else {
+    
         while ( j <= n ) {
             r[k,"c"] <- j + 1
             r[k,"d"] <- 0
@@ -55,8 +140,10 @@ gegenbauer.recurrences <- function( n, alpha, normalized=FALSE )
             r[k,"f"] <- j + 2 * alpha - 1
             j <- j + 1
             k <- k + 1
-        }
-        return( r )
-    }
-    return( NULL )
+            
+        } # end while block
+        
+    } # end of else block
+    
+    return( r )
 }

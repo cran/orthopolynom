@@ -19,18 +19,20 @@ hermite.h.recurrences <- function( n, normalized=FALSE )
     j <- 0
     k <- 1
     if ( normalized ) {
-        norms <- sqrt( hermite.h.inner.products( np1 ) )
         while ( j <= n ) {
-            r[k,"c"] <- (1) * norms[k+1]
-            r[k,"d"] <- (0) * norms[k]
-            r[k,"e"] <- (2) * norms[k]
-            if ( j == 0 )
+            r[k,"c"] <- 1
+            r[k,"d"] <- 0
+            r[k,"e"] <- sqrt( 2 / ( j + 1 ) )
+            if ( j == 0 ) {
                 r[k,"f"] <- 0
+            }    
             else {
-                if ( k == 1 )
+                if ( k == 1 ) {
                     r[k,"f"] <- 0
-                else
-                    r[k,"f"] <- (2 *  j) * norms[k-1]
+                }    
+                else {
+                    r[k,"f"] <- sqrt( j / ( j + 1 ) )
+                }    
             }
             j <- j + 1
             k <- k + 1

@@ -19,18 +19,14 @@ slegendre.recurrences <- function( n, normalized=FALSE )
     j <- 0
     k <- 1
     if ( normalized ) {
-        norms <- sqrt( slegendre.inner.products( np1 ) )
         while ( j <= n ) {
-            r[k,"c"] <-  ( j + 1 )     * norms[k+1]
-            r[k,"d"] <- -( 2 * j + 1 ) * norms[k]
-            r[k,"e"] <-  ( 4 * j + 2 ) * norms[k]
+            r[k,"c"] <-  j + 1
+            r[k,"d"] <- - sqrt( ( 2 * j + 3 ) * ( 2 * j + 1 ) )
+            r[k,"e"] <-  2 * sqrt( ( 2 * j + 3 ) * ( 2 * j + 1 ) )
             if ( j == 0 )
                 r[k,"f"] <- 0
             else {
-                if ( k == 1 )
-                    r[k,"f"] <- 0
-                else
-                    r[k,"f"] <- j * norms[k-1]
+                r[k,"f"] <- j * sqrt( ( 2 * j + 3 ) / ( 2 * j - 1 ) )
             }
             j <- j + 1
             k <- k + 1

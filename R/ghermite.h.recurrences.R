@@ -25,20 +25,39 @@ ghermite.h.recurrences <- function( n, mu, normalized=FALSE )
     k <- 1
     two.mu <- 2 * mu
     if ( normalized ) {
-        norms <- sqrt( ghermite.h.inner.products( np1, mu ) )
         while ( j <= n ) {
+###
+###         if theta.j is zero, then j is even
+###
             theta.j <- j - 2 * floor( j / 2)
-            r[k,"c"] <- (1) * norms[k+1]
-            r[k,"d"] <- (0) * norms[k]
-            r[k,"e"] <- (2) * norms[k]
-            if ( j == 0 )
-                r[k,"f"] <- 0
-            else {
-                if ( k == 1 )
+###
+###         j is even
+###
+            if ( theta.j == 0 ) {
+                r[k,"c"] <- 1
+                r[k,"d"] <- 0
+                r[k,"e"] <- sqrt( 2 / ( j + two.mu + 1 ) )
+                if ( j == 0 ) {
                     r[k,"f"] <- 0
-                else
-                    r[k,"f"] <- 2 * ( j + two.mu * theta.j ) * norms[k-1]
+                }
+                else {
+                    r[k,"f"] <- sqrt( j / ( j + two.mu + 1 ) )
+                }
             }
+###
+###         j is odd
+###
+            else {
+                r[k,"c"] <- 1
+                r[k,"d"] <- 0
+                r[k,"e"] <- sqrt( 2 / ( j + 1 ) )
+                if ( j == 0 ) {
+                    r[k,"f"] <- 0
+                }
+                else {
+                    r[k,"f"] <- sqrt( ( j + two.mu ) / ( j + 1 ) )
+                }
+            }    
             j <- j + 1
             k <- k + 1
         }

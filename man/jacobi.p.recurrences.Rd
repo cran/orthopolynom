@@ -8,12 +8,12 @@
   and for orders \eqn{k = 0,\;1,\; \ldots ,\;n}.
 }
 \usage{
-jacobi.p.recurrences(n, a, b, normalized=FALSE)
+jacobi.p.recurrences(n, alpha, beta, normalized=FALSE)
 }
 \arguments{
   \item{n}{ integer value for the highest polynomial order }
-  \item{a}{ numeric value for the first polynomial parameter }
-  \item{b}{ numeric value for the second polynomial parameter }
+  \item{alpha}{ numeric value for the first polynomial parameter }
+  \item{beta}{ numeric value for the second polynomial parameter }
   \item{normalized}{ boolean value which, if TRUE, returns recurrence relations for normalized polynomials }
 }
 \value{

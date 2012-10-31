@@ -9,8 +9,7 @@ chebyshev.s.polynomials <- function( n, normalized=FALSE )
 ### n = integer highest polynomial order
 ### normalized = boolean value.  if true, the polynomials are normalized
 ###
-    require( polynom )
-    recurrences <- chebyshev.s.recurrences( n, normalized )
+    recurrences <-      chebyshev.s.recurrences( n, normalized )
     if (normalized ) {
         h.0 <- pi
         p.0 <- polynomial( c( 1 / sqrt( h.0 ) ) )

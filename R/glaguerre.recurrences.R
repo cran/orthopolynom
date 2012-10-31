@@ -23,18 +23,15 @@ glaguerre.recurrences <- function( n, alpha, normalized=FALSE )
     j <- 0
     k <- 1
     if ( normalized ) {
-        norms <- sqrt( glaguerre.inner.products( np1, alpha ) )
         while ( j <= n ) {
-            r[k,"c"] <- ( j + 1 ) * norms[k+1]
-            r[k,"d"] <- ( 2 * j + alpha + 1 ) * norms[k]
-            r[k,"e"] <- (-1) * norms[k]
+            r[k,"c"] <- j + 1
+            rho.j <- sqrt( ( j + 1 ) / ( alpha + j + 1 ) )
+            r[k,"d"] <- ( 2 * j + alpha + 1 ) * rho.j
+            r[k,"e"] <- - rho.j
             if ( j == 0 )
                 r[k,"f"] <- 0
             else {
-                if ( k == 1 )
-                    r[k,"f"] <- 0
-                else
-                    r[k,"f"] <- ( j + alpha ) * norms[k-1]
+                r[k,"f"] <-  sqrt( j * ( j + 1 ) * ( j + alpha ) / (alpha + j + 1 ) )
             }
             j <- j + 1
             k <- k + 1

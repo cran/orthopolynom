@@ -10,35 +10,39 @@ gegenbauer.polynomials <- function( n, alpha, normalized=FALSE )
 ### alpha = polynomial parameter
 ### normalized = boolean value.  if true, the polynomials are normalized
 ###
-    require( polynom )
-    if ( abs( alpha ) < 1e-6 ) {
-        t.polynomials <- chebyshev.t.polynomials( n, normalized )
-        np1 <- n + 1
-        polynomials <- as.list( rep( NULL, np1 ) )
-        polynomials[[1]] <- 2 * t.polynomials[[1]]
-        k <- 1
-        kp1 <- 2
-        while ( k <= n ) {
-            t.polynomial <- t.polynomials[[kp1]]
-            polynomials[[kp1]] <- ( 2 / k ) * t.polynomial
-            k <- k + 1
-            kp1 <- kp1 + 1
+    if ( n < 0 )
+        stop( "highest polynomial order is less than zero" )
+    if ( n != round(n) )
+        stop( "highest polynomial order is not an integer" )
+    if ( alpha <= -0.5 )
+        stop( "alpha is less than or equal to -0.5" )
+###
+### alpha = 0.5
+### special case is the Legendre polynomial
+###
+    if ( abs( alpha - 0.5 ) < 1e-6 )
+        return( legendre.polynomials( n, normalized ) )
+###
+### alpha = 1.0
+### special case is the Chebyshev polynomial of the second kind U
+###
+    if ( abs( alpha - 1.0 ) < 1e-6 )
+        return( chebyshev.u.polynomials( n, normalized ) )
+###
+### all other cases including alpha = 0
+###
+    recurrences <- gegenbauer.recurrences( n, alpha, normalized )
+    if ( normalized ) {
+        if ( abs( alpha ) < 1e-6 ) {
+            h.0 <- pi
         }
+        else {
+            h.0 <- sqrt( pi ) * gamma( alpha + 0.5 ) / gamma( alpha + 1 )
+        }    
+        p.0 <- polynomial( c( 1 / sqrt( h.0 ) ) )
+        polynomials <- orthonormal.polynomials( recurrences, p.0 )
     }
-    else if ( abs( alpha - 0.5 ) < 1e-6 )
-        polynomials <- legendre.polynomials( n, normalized )
-    else if ( abs( alpha - 1.0 ) < 1e-6 )
-        polynomials <- chebyshev.u.polynomials( n, normalized )
-    else {
-        recurrences <- gegenbauer.recurrences( n, alpha, normalized )
-        if ( normalized ) {
-            alpha.2 <- 2 * alpha
-            h.0 <- pi * ( 2^(1-alpha.2) ) * exp ( lgamma(alpha.2) - lgamma(alpha) -lgamma(alpha+1) )
-            p.0 <- polynomial( c( 1 / sqrt( h.0 ) ) )
-            polynomials <- orthonormal.polynomials( recurrences, p.0 )
-        }
-        else
-            polynomials <- orthogonal.polynomials( recurrences )
-    }
+    else
+        polynomials <- orthogonal.polynomials( recurrences )
     return( polynomials )
 }
