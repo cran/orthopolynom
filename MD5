@@ -1,4 +1,4 @@
-4f0fca5a0b28ad1377cf36528ef72c77 *DESCRIPTION
+49d353d170e4bef2c09ee41718ec8ff3 *DESCRIPTION
 5222fbcb3db2a54466c62ae7803c9576 *NAMESPACE
 563c13427f35c13c2f0386b0a30f1b9e *R/chebyshev.c.inner.products.R
 38f9f1dfbba1af8272df0015a04f6632 *R/chebyshev.c.polynomials.R
@@ -43,7 +43,7 @@ a09496425f4b88dfc6fa54b0e105bd9c *R/jacobi.g.polynomials.R
 bf1e0ff49490bd96febccd73ae987181 *R/jacobi.matrices.R
 52545881a8e6178cd5a0c4fd0ac8a93f *R/jacobi.p.inner.products.R
 6f9a1d936f05fafb7ead0610528f14ed *R/jacobi.p.polynomials.R
-88f8a00ac2a3a138725e828810f2b494 *R/jacobi.p.recurrences.R
+f13c018f1e5c8664be65a4a9d3319916 *R/jacobi.p.recurrences.R
 a47f565020d99d02deac6d96694e2823 *R/jacobi.p.weight.R
 359997772378eb912a1f4b1d35c7f0f4 *R/laguerre.inner.products.R
 985c9ad77c14719423c0569f33e2713b *R/laguerre.polynomials.R

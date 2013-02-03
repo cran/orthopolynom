@@ -32,6 +32,7 @@ jacobi.p.recurrences <- function( n, alpha, beta, normalized=FALSE )
     j <- 0
     k <- 1
     ab <- alpha + beta
+    ab.zero <- abs( alpha + beta ) < 1e-6
     aabb <- alpha * alpha - beta * beta
     if ( normalized ) {
         norms <- sqrt( jacobi.p.inner.products( n+1, alpha, beta ) )
@@ -40,6 +41,12 @@ jacobi.p.recurrences <- function( n, alpha, beta, normalized=FALSE )
             d <- ( 2 * j + ab + 1 ) * aabb
             e <- pochhammer( 2 * j + ab, 3 )
             f <- 2 * ( j + alpha ) * ( j + beta ) * ( 2 * j + ab + 2 )
+            if ( ab.zero && j == 0 ) {
+                c <- 1
+                d <- alpha
+                e <- 1
+                f <- 0
+            }    
             if ( j == 0 ) {
                 rho.j <- sqrt( ( ab + 3 ) / ( ( alpha + 1 ) * ( beta + 1 ) ) )
             }
@@ -82,6 +89,12 @@ jacobi.p.recurrences <- function( n, alpha, beta, normalized=FALSE )
             d <- ( 2 * j + ab + 1 ) * aabb
             e <- pochhammer( 2 * j + ab, 3 )
             f <- 2 * ( j + alpha ) * ( j + beta ) * ( 2 * j + ab + 2 )
+            if ( ab.zero  && j == 0) {
+                c <- 1
+                d <- alpha
+                e <- 1
+                f <- 0
+            }    
             r[k,"c"] <- c
             r[k,"d"] <- d
             r[k,"e"] <- e
