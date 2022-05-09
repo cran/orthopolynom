@@ -7,7 +7,6 @@ polynomial.powers <- function( polynomials )
 ### Parameters:
 ### polynomials = a list of polynomial objects in increase polynomial order
 ###
-    require( polynom )
     coefficients <- polynomial.coefficients( polynomials )
     np1 <- length( polynomials )
     powers <- as.list( rep( NULL, np1 ) )

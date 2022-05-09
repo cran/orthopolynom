@@ -55,6 +55,7 @@ norm <- sqrt( pi )
 ###
 ### create the order 0 orthonormal polynomial
 ###
+library("polynom")
 p.0 <- polynomial( c( 1 / norm ) )
 ###
 ### generate a list of orthonormal polynomial objects

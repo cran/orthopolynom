@@ -7,7 +7,6 @@ polynomial.coefficients <- function( polynomials )
 ### Parameter
 ### polynomials = a list of polynomial objects
 ###
-    require( polynom )
     n <- length( polynomials )
     coefficients <- as.list( rep( NULL, n ) )
     j <- 1

@@ -8,7 +8,6 @@ polynomial.derivatives <- function( polynomials )
 ###   Parameter
 ###   polynomials = a list of polynomial objects
 ###
-   require( polynom )
    n <- length( polynomials )
    derivatives <- as.list( rep( NULL, n ) )
    j <- 1

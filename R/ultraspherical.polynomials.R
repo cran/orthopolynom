@@ -8,7 +8,6 @@ ultraspherical.polynomials <- function( n , alpha, normalized=FALSE )
 ###	Parameters
 ###	n = integer highest polynomial order
 ###
-	require( polynom )
 	polynomials <- gegenbauer.polynomials( n, alpha, normalized )
 	return( polynomials )
 }

@@ -8,7 +8,6 @@ polynomial.integrals <- function( polynomials )
 ###   Parameter
 ###   polynomials = a list of polynomial objects
 ###
-   require( polynom )
    n <- length( polynomials )
    integrals <- as.list( rep( NULL, n ) )
    j <- 1

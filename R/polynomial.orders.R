@@ -7,7 +7,6 @@ polynomial.orders <- function( polynomials )
 ### Parameter
 ### polynomials = a list of polynomial objects
 ###
-    require( polynom )
     n <- length( polynomials )
     orders <- rep( 0, n ) 
     j <- 1

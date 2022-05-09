@@ -8,7 +8,6 @@ orthonormal.polynomials <- function( recurrences, p.0 )
 ### recurrences = a data frame containing the parameters c, d, e and f
 ### p.0 = a polynomial object for the order 0 orthonormal polynomial
 ###
-    require( polynom )
     np1 <- nrow( recurrences )
     n <- np1 - 1
     c <- recurrences$c

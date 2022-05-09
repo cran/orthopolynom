@@ -9,7 +9,6 @@ polynomial.values <- function( polynomials, x )
 ### polynomials = a list of polynomial objects
 ### x = the argument which can be any numeric object
 ###
-    require( polynom )
     n <- length( polynomials )
     values <- as.list( rep( NULL, n ) )
     j <- 1

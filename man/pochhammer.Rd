@@ -19,7 +19,7 @@ pochhammer(z, n)
 \value{
   The value of Pochhammer's symbol
 }
-\author{ Frederick Novomestky \email{fnovomes@poly.edu) }
+\author{ Frederick Novomestky \email{fnovomes@poly.edu}
 }
 \examples{
 ###

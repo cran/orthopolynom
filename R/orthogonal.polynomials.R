@@ -7,7 +7,6 @@ orthogonal.polynomials <- function( recurrences )
 ### Parameter
 ### recurrences = a data frame containing the parameters c, d, e and f
 ###
-    require( polynom )
     np1 <- nrow( recurrences )
     n <- np1 - 1
     c <- recurrences$c

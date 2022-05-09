@@ -7,7 +7,6 @@ monic.polynomials <- function( monic.recurrences )
 ###	Parameter
 ###	monic.recurrences = a data frame containing the parameters a and b
 ###
-	require( polynom )
 	np1 <- nrow( monic.recurrences )
 	n <- np1 - 1
 	polynomials <- as.list( rep( NULL, np1 ) )
