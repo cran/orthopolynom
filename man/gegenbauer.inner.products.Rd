@@ -16,7 +16,7 @@ gegenbauer.inner.products(n,alpha)
 \details{
   The formula used to compute the inner products is as follows.
   
-  \eqn{h_n  = \left\langle {C_n^{\left( \alpha  \right)} |C_n^{\left( \alpha  \right)} } \right\rangle  = \left\{ {\begin{array}{*{20}c}
+  \eqn{h_n  = \left\langle {C_n^{\left( \alpha  \right)} |C_n^{\left( \alpha  \right)} } \right\rangle  = \left\{ {\begin{array}{cc}
    {\frac{{\pi \;2^{1 - 2\,\alpha } \,\Gamma \left( {n + 2\,\alpha } \right)}}
 {{n!\;\left( {n + \alpha } \right)\,\left[ {\Gamma \left( \alpha  \right)} \right]^2 }}} & {\alpha  \ne 0}  \\
    {\frac{{2\;\pi }}

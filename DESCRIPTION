@@ -1,5 +1,5 @@
 Package: orthopolynom
-Version: 1.0-6
+Version: 1.0-6.1
 Date: 2022-05-06
 Title: Collection of Functions for Orthogonal and Orthonormal
         Polynomials
@@ -13,6 +13,6 @@ Description: A collection of functions to construct sets of orthogonal
         value and roots of lists of polynomial objects.
 License: GPL (>= 2)
 NeedsCompilation: no
-Packaged: 2022-05-06 18:00:34 UTC; hothorn
+Packaged: 2022-10-03 09:51:57 UTC; hornik
 Repository: CRAN
-Date/Publication: 2022-05-09 06:58:28 UTC
+Date/Publication: 2022-10-03 10:11:45 UTC

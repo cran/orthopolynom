@@ -1,4 +1,4 @@
-de5da3b7f65f8ce46fed8848d3186bef *DESCRIPTION
+57f85ad41641aaa0a972d76b77811e71 *DESCRIPTION
 c9d1cacd22d4b7bb8a1d53abdf378ec4 *NAMESPACE
 563c13427f35c13c2f0386b0a30f1b9e *R/chebyshev.c.inner.products.R
 38f9f1dfbba1af8272df0015a04f6632 *R/chebyshev.c.polynomials.R
@@ -88,7 +88,7 @@ a0848d4d642bcb6459e9198f3adad8a4 *R/ultraspherical.inner.products.R
 cf95787d56c7065733477c9a7d4ef52b *R/ultraspherical.polynomials.R
 372fbb012ca0266bed752855cdd8e9d8 *R/ultraspherical.recurrences.R
 069d2c8718537334491145e08839a9a9 *R/ultraspherical.weight.R
-61ac6f0db5d61acae582c01e9b4a355d *man/chebyshev.c.inner.products.Rd
+52f49c9c3f80ae7869a6b1f5a35036e3 *man/chebyshev.c.inner.products.Rd
 9be63762041ac011ee4ca8f7f95bb54a *man/chebyshev.c.polynomials.Rd
 1b687e5e956198c3c24db3518ab9b41d *man/chebyshev.c.recurrences.Rd
 96102456e71bb127feba11505afeb14e *man/chebyshev.c.weight.Rd
@@ -96,7 +96,7 @@ cf95787d56c7065733477c9a7d4ef52b *R/ultraspherical.polynomials.R
 af32e59826fcd4b78fb4dff697c130da *man/chebyshev.s.polynomials.Rd
 fc05b85c4ea599ba272a9db79c4c27a5 *man/chebyshev.s.recurrences.Rd
 584100a6405f5ebea810ab01eca6d3c2 *man/chebyshev.s.weight.Rd
-fee062445f0ccb69095e381f1d740484 *man/chebyshev.t.inner.products.Rd
+dd413f88e864ad05cf9a0473e631843d *man/chebyshev.t.inner.products.Rd
 18a6f10c3aef0f1169717d28a2a493f5 *man/chebyshev.t.polynomials.Rd
 9edc843f5bc4f1d7ec6017892653b8be *man/chebyshev.t.recurrences.Rd
 54c9fe15fc1822bf40c7c1d7f3b92a40 *man/chebyshev.t.weight.Rd
@@ -104,7 +104,7 @@ d3fb02b24c2f62b8038d3ebcbb4f6fb9 *man/chebyshev.u.inner.products.Rd
 19ea20f0aa04934ca34a589dff35ec13 *man/chebyshev.u.polynomials.Rd
 72fe41559d703aeada9dc681edbd8c88 *man/chebyshev.u.recurrences.Rd
 01ec49457f7639eef7d305335892fa71 *man/chebyshev.u.weight.Rd
-50b78e1229b4b08a00f5303d7abf6f1e *man/gegenbauer.inner.products.Rd
+f46d50f358e73b04d8d7f793c9af512e *man/gegenbauer.inner.products.Rd
 0993f99c1100242831e603fec3f8768f *man/gegenbauer.polynomials.Rd
 e7638dd094fe1590c5fe7683e0e6f603 *man/gegenbauer.recurrences.Rd
 d2c5e74568feaf11411788e18773dada *man/gegenbauer.weight.Rd
@@ -156,7 +156,7 @@ e32e1fdeb8c50ca3a803026725394622 *man/polynomial.powers.Rd
 2e4e65580c13d06c0d5eaebaf51caa1a *man/polynomial.roots.Rd
 d5d6df1cc71f4054d2b2c346a2198817 *man/polynomial.values.Rd
 5b5bf85a4623c4af4e22ae5b62aae909 *man/scaleX.Rd
-5eeedaf441dce79ad21eb947b2befc13 *man/schebyshev.t.inner.products.Rd
+1d7fd83453b714c8a1d73dbd226ebdb5 *man/schebyshev.t.inner.products.Rd
 94b62d6355aed55230f7a8861068cf60 *man/schebyshev.t.polynomials.Rd
 e6a3283255e1b47f540f2330dd28a1e4 *man/schebyshev.t.recurrences.Rd
 7bc3d8b2128cbec73082b6ed7f2e8fa8 *man/schebyshev.t.weight.Rd

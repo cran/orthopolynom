@@ -15,7 +15,7 @@ chebyshev.t.inner.products(n)
 \details{
   The formula used to compute the inner products is as follows.
   
-  \eqn{h_n  = \left\langle {T_n |T_n } \right\rangle  = \left\{ {\begin{array}{*{20}c}
+  \eqn{h_n  = \left\langle {T_n |T_n } \right\rangle  = \left\{ {\begin{array}{cc}
    {\frac{\pi }
 {2}} & {n \ne 0}  \\
    \pi  & {n = 0}  \\
